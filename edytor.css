@@ -1,0 +1,292 @@
+/* ===== EDYTOR TABELI - HANDSONTABLE STYLING ===== */
+
+/* Nagłówek tabeli */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg-lighter);
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.table-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.row-count {
+  padding: 0.25rem 0.75rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Selektor motywu */
+.theme-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.theme-selector label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+  white-space: nowrap;
+}
+
+#handsontable-theme-select {
+  min-width: 150px;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+#handsontable-theme-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+#handsontable-theme-select:hover {
+  border-color: var(--primary-color);
+}
+
+/* Specjalny styl dla opcji Auto */
+#handsontable-theme-select option[value="auto"] {
+  font-weight: 600;
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Wyróżnienie gdy Auto jest wybrane */
+#handsontable-theme-select[value="auto"] {
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg,
+      var(--bg-color) 0%,
+      rgba(var(--primary-rgb), 0.05) 100%);
+}
+
+/* Przyciski akcji */
+.header-controls .btn {
+  padding: 0.5rem 1rem;
+  border: solid 1px transparent;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.header-controls .btn:focus {
+  border-color: rgba(var(--primary-rgb), 0.1);
+}
+
+.header-controls .btn:hover {
+  transform: translateX(2px);
+  -webkit-transform: translateX(2px);
+  -moz-transform: translateX(2px);
+  -ms-transform: translateX(2px);
+  -o-transform: translateX(2px);
+}
+
+.header-controls .btn-primary {
+  border-color: rgba(var(--primary-rgb), 0.5);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.header-controls .btn-primary:hover {
+  background: rgba(var(--primary-rgb), 0.2);
+  color: var(--table-text);
+  box-shadow: 0 0px 5px 1px rgba(var(--primary-rgb), 0.5), inset 0 0px 5px 1px rgba(var(--primary-rgb), 0.5);
+  border-color: var(--primary-color);
+}
+
+
+
+.header-controls .btn-danger {
+  border-color: rgba(var(--danger-rgb), 0.5);
+  color: var(--danger-color);
+  background: transparent;
+}
+
+.header-controls .btn-danger:hover {
+  background: rgba(var(--danger-rgb), 0.2);
+  color: var(--table-text);
+  box-shadow: 0 0px 5px 1px rgba(var(--danger-rgb), 0.5), inset 0 0px 5px 1px rgba(var(--danger-rgb), 0.5);
+  border-color: var(--danger-color);
+}
+
+.header-controls .btn-success {
+  border-color: rgba(var(--success-rgb), 0.5);
+  color: var(--success-color);
+  background: transparent;
+}
+
+.header-controls .btn-success:hover {
+  background: rgba(var(--success-rgb), 0.2);
+  color: var(--table-text);
+  box-shadow: 0 0px 5px 1px rgba(var(--success-rgb), 0.5), inset 0 0px 5px 1px rgba(var(--success-rgb), 0.5);
+  border-color: var(--success-color);
+}
+
+.header-controls .btn-info {
+  border-color: rgba(var(--info-rgb), 0.5);
+  color: var(--info-color);
+  background: transparent;
+}
+
+.header-controls .btn-info:hover {
+  background: rgba(var(--info-rgb), 0.2);
+  color: var(--table-text);
+  box-shadow: 0 0px 5px 1px rgba(var(--info-rgb), 0.5), inset 0 0px 5px 1px rgba(var(--info-rgb), 0.5);
+  border-color: var(--info-color);
+}
+
+/* Kontener Handsontable */
+.handsontable-wrapper {
+  border: 1px solid var(--border-color);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+/* Handsontable - motywy */
+.handsontable-wrapper.ht-theme-main {
+  --ht-foreground-color: #333;
+  --ht-background-color: #fff;
+  --ht-accent-color: #0066cc;
+}
+
+.handsontable-wrapper.ht-theme-horizon {
+  --ht-foreground-color: #333;
+  --ht-background-color: #f8f9fa;
+  --ht-accent-color: #0066cc;
+}
+
+.handsontable-wrapper.ht-theme-main-dark {
+  --ht-foreground-color: #e9ecef;
+  --ht-background-color: #2d3748;
+  --ht-accent-color: #4299e1;
+}
+
+.handsontable-wrapper.ht-theme-horizon-dark {
+  --ht-foreground-color: #e9ecef;
+  --ht-background-color: #1a202c;
+  --ht-accent-color: #4299e1;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .header-left {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .theme-selector {
+    margin-right: 0;
+    justify-content: center;
+  }
+
+  #handsontable-theme-select {
+    min-width: 120px;
+  }
+
+  .header-controls .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-header {
+    padding: 0.75rem;
+  }
+
+  .table-title {
+    font-size: 1.1rem;
+  }
+
+  .row-count {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .header-controls .btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .header-controls .btn i {
+    margin-right: 0.25rem;
+  }
+}
+
+.cm-s-monokai.CodeMirror {
+  background: rgba(var(--bg-card-rgb), 0.9);
+  color: var(--bg-card);
+}
+
+.cm-s-monokai .cm-header {
+  color: var(--primary-color);
+}
+
+.cm-s-monokai span.cm-variable {
+  color: var(--text-primary);
+}
+
+.cm-s-monokai span.cm-variable-2 {
+  color: var(--bg-card);
+}
+
+.cm-s-monokai .CodeMirror-gutters {
+  background-color: var(--bg-tertiary);
+  border-right: 1px solid var(--column-timestamp);
+
+}
+
+.cm-s-monokai .CodeMirror-linenumber {
+  color: var(--text-secondary);
+}
